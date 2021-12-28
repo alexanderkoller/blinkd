@@ -23,7 +23,9 @@ The script `monitor-mpd.py` will turn the LED ring to solid blue if MPD is playi
 
 ## System services
 
-The cleanest way to run blinkd is with a system service. Copy `blinkd.service` (and if you want it, `mpd-blinkd.service`) from the `etc` directory into `etc/systemd/system` on your system. Then enable the services as follows:
+The cleanest way to run blinkd is with a system service.
+
+Edit the `WorkingDirectory` and `ExecStart` entries in `etc/blinkd.service` to match the directory to which you have checked out this repository (same for `mpd-blinkd.service`). Then copy the service files from the `etc` directory into `etc/systemd/system` on your system. Finally, enable the services as follows:
 
 ```
 sudo systemctl daemon-reload
