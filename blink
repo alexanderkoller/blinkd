@@ -1,0 +1,10 @@
+#! /bin/bash
+#
+# Writes a blink command asynchronously to /run/blinkd, where the blinkd daemon
+# will pick it up. If no blinkd is running, the command is written but never read.
+# The blink script returns right away anyway.
+
+exec 4<>/run/blinkd 
+echo "$@" | tee >&4
+
+

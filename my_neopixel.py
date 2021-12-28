@@ -5,8 +5,8 @@ import neopixel
 
 pixels = neopixel.NeoPixel(board.D21, 16)
 
-GREEN = (0,60,0)
-BLUE = (0,0,80)
+GREEN = (0,40,0)
+BLUE = (0,0,60)
 BLACK = (0,0,0)
 
 even_pixels = [2*x for x in range(8)]
