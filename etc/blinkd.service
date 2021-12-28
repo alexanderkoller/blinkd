@@ -1,0 +1,16 @@
+[Unit]
+Description=LED Blink Daemon
+Wants=local-fs.target
+#Before=networking.service
+#Before=local-fs-pre.target
+
+[Service]
+User=root
+Group=root
+Type=simple
+RemainAfterExit=true
+WorkingDirectory=/home/pi/blinkd
+ExecStart=/bin/bash /home/pi/blinkd/start.sh
+
+[Install]
+WantedBy=multi-user.target
